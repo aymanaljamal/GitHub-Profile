@@ -276,3 +276,27 @@ JPA/Hibernate ████████░░░░  78%
 <div align="center">
 <img src="https://capsule-render.vercel.app/api?type=venom&color=gradient&customColorList=0,2,8,16,24&height=140&section=footer&animation=fadeIn&text=GAME+ON+◈+2026&fontSize=24&fontColor=ffffff&fontAlignY=65&stroke=FF2D55&strokeWidth=1" width="100%"/>
 </div>
+
+
+---
+
+# 👨‍💻 PLAYER PROFILE
+
+<div align="center">
+
+<img src="https://github.com/aymanaljamal/GitHub-Profile/blob/main/ChatGPT%20Image%20Jul%2025%2C%202026%2C%2009_58_43%20PM.png?raw=true" width="240" style="border-radius:50%;"/>
+
+<br><br>
+
+<a href="https://github.com/aymanaljamal/GitHub-Profile/blob/main/Ayman_Jamal_Backend_Engineer_CV.pdf.pdf?raw=true">
+<img src="https://img.shields.io/badge/📄_DOWNLOAD_CV-00A3FF?style=for-the-badge&labelColor=0D0D0D"/>
+</a>
+
+<a href="https://github.com/aymanaljamal/GitHub-Profile">
+<img src="https://img.shields.io/badge/📂_PORTFOLIO-FF2D55?style=for-the-badge&labelColor=0D0D0D"/>
+</a>
+
+</div>
+
+---
+
