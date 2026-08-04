@@ -1,490 +1,1788 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ayman Al-Jamal — Backend Engineer & Mobile Developer</title>
-<meta name="description" content="Ayman Al-Jamal — Backend Engineer specializing in Java, Spring Boot and REST APIs, and Flutter/Android mobile developer. Computer Science graduate of Birzeit University.">
-<meta name="keywords" content="Ayman Al-Jamal, Backend Engineer, Spring Boot, Java Developer, Flutter Developer, Android Developer, Birzeit University, Software Engineer Portfolio">
-<meta name="author" content="Ayman Al-Jamal">
-<meta name="theme-color" content="#0a0d13">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayman Al-Jamal — Backend Engineer & Mobile Developer</title>
+    <meta name="description" content="Ayman Al-Jamal — Backend Engineer specializing in Java, Spring Boot and REST APIs, and Flutter/Android mobile developer. Computer Science graduate of Birzeit University.">
+    <meta name="keywords" content="Ayman Al-Jamal, Backend Engineer, Spring Boot, Java Developer, Flutter Developer, Android Developer, Birzeit University, Software Engineer Portfolio">
+    <meta name="author" content="Ayman Al-Jamal">
+    <meta name="theme-color" content="#0a0d13">
 
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="Ayman Al-Jamal — Backend Engineer & Mobile Developer">
-<meta property="og:description" content="Backend Engineer (Java / Spring Boot) and Flutter/Android developer. Computer Science, Birzeit University.">
-<meta property="og:image" content="assets/preview.png">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ayman Al-Jamal — Backend Engineer & Mobile Developer">
+    <meta property="og:description" content="Backend Engineer (Java / Spring Boot) and Flutter/Android developer. Computer Science, Birzeit University.">
+    <meta property="og:image" content="assets/preview.png">
 
-<link rel="icon" href="data:,">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:,">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==========================================================
+           Ayman Al-Jamal — Portfolio
+           Theme: "Systems Console" — dark, corporate, backend-flavored
+           ========================================================== */
+
+        /* ---------- Tokens ---------- */
+        :root {
+            --bg: #0a0d13;
+            --bg-elev: #10141d;
+            --bg-elev-2: #161c28;
+            --border: #232a38;
+            --border-soft: #1a2029;
+            --text: #e8eaf0;
+            --text-dim: #9aa3b5;
+            --text-faint: #5c6579;
+            --accent: #5b8def;
+            --accent-soft: rgba(91, 141, 239, 0.12);
+            --accent-2: #dba55b;
+            --accent-2-soft: rgba(219, 165, 91, 0.12);
+            --success: #4caf7d;
+            --radius-s: 6px;
+            --radius: 12px;
+            --radius-l: 18px;
+            --font-display: 'Space Grotesk', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --container: 1180px;
+            --nav-h: 72px;
+            --ease: cubic-bezier(.22, 1, .36, 1);
+        }
+
+        [data-theme="light"] {
+            --bg: #f6f7f9;
+            --bg-elev: #ffffff;
+            --bg-elev-2: #eef0f4;
+            --border: #dfe3ea;
+            --border-soft: #e8ebf0;
+            --text: #14171f;
+            --text-dim: #4c5566;
+            --text-faint: #8790a1;
+            --accent: #3866d6;
+            --accent-soft: rgba(56, 102, 214, 0.08);
+            --accent-2: #b4772c;
+            --accent-2-soft: rgba(180, 119, 44, 0.10);
+        }
+
+        /* ---------- Reset ---------- */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            transition: background .35s var(--ease), color .35s var(--ease);
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: var(--font-display);
+            margin: 0;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+        p {
+            margin: 0;
+        }
+        button {
+            font-family: inherit;
+            cursor: pointer;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: .001ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .001ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        .mono {
+            font-family: var(--font-mono);
+        }
+
+        .skip-link {
+            position: absolute;
+            left: -999px;
+            top: 0;
+            background: var(--accent);
+            color: #fff;
+            padding: 10px 16px;
+            z-index: 200;
+            border-radius: 0 0 8px 0;
+        }
+        .skip-link:focus {
+            left: 0;
+        }
+
+        :focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        .container {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        /* ---------- Scroll progress ---------- */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 2px;
+            width: 0%;
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            z-index: 300;
+            transition: width .1s linear;
+        }
+
+        /* ---------- Nav ---------- */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 150;
+            height: var(--nav-h);
+            display: flex;
+            align-items: center;
+            background: color-mix(in srgb, var(--bg) 78%, transparent);
+            backdrop-filter: blur(14px) saturate(140%);
+            border-bottom: 1px solid transparent;
+            transition: border-color .3s var(--ease), background .3s var(--ease);
+        }
+        .nav.scrolled {
+            border-bottom-color: var(--border);
+        }
+        .nav-inner {
+            max-width: var(--container);
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            font-family: var(--font-mono);
+            font-weight: 600;
+            font-size: 1.05rem;
+            letter-spacing: 0.02em;
+            color: var(--text);
+        }
+        .logo-bracket {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+        }
+        .nav-links a {
+            font-family: var(--font-mono);
+            font-size: .84rem;
+            color: var(--text-dim);
+            position: relative;
+            padding: 6px 2px;
+            transition: color .2s var(--ease);
+        }
+        .nav-links a::before {
+            content: "·";
+            margin-right: 4px;
+            opacity: 0;
+            color: var(--accent);
+            transition: opacity .2s var(--ease);
+        }
+        .nav-links a:hover {
+            color: var(--text);
+        }
+        .nav-links a.active {
+            color: var(--accent);
+        }
+        .nav-links a.active::before {
+            opacity: 1;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .theme-toggle {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            background: var(--bg-elev);
+            color: var(--text-dim);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color .2s var(--ease), border-color .2s var(--ease), transform .2s var(--ease);
+        }
+        .theme-toggle:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+            transform: rotate(15deg);
+        }
+        .icon-moon {
+            display: none;
+        }
+        [data-theme="light"] .icon-sun {
+            display: none;
+        }
+        [data-theme="light"] .icon-moon {
+            display: block;
+        }
+
+        .nav-toggle {
+            display: none;
+            width: 38px;
+            height: 38px;
+            border: none;
+            background: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            align-items: center;
+        }
+        .nav-toggle span {
+            width: 20px;
+            height: 2px;
+            background: var(--text);
+            transition: transform .25s var(--ease), opacity .25s var(--ease);
+        }
+        .nav-toggle.open span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+        .nav-toggle.open span:nth-child(2) {
+            opacity: 0;
+        }
+        .nav-toggle.open span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        /* ---------- Buttons ---------- */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 22px;
+            border-radius: var(--radius-s);
+            font-size: .92rem;
+            font-weight: 600;
+            border: 1px solid transparent;
+            transition: transform .2s var(--ease), background .2s var(--ease), border-color .2s var(--ease), color .2s var(--ease);
+        }
+        .btn-primary {
+            background: var(--accent);
+            color: #0a0d13;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            background: color-mix(in srgb, var(--accent) 88%, white);
+        }
+        .btn-ghost {
+            background: transparent;
+            color: var(--text);
+            border-color: var(--border);
+        }
+        .btn-ghost:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* ---------- Hero ---------- */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: var(--nav-h);
+            overflow: hidden;
+        }
+        .hero-grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(var(--border-soft) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border-soft) 1px, transparent 1px);
+            background-size: 42px 42px;
+            mask-image: radial-gradient(ellipse 70% 60% at 60% 40%, black, transparent 75%);
+            opacity: .6;
+        }
+        .hero-inner {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1.15fr .85fr;
+            gap: 56px;
+            align-items: center;
+            padding-top: 40px;
+            padding-bottom: 60px;
+        }
+        .eyebrow {
+            color: var(--accent);
+            font-size: .82rem;
+            letter-spacing: .02em;
+            margin-bottom: 16px;
+            opacity: 0;
+            transform: translateY(8px);
+            animation: fadeUp .6s var(--ease) forwards;
+        }
+        .hero-name {
+            font-size: clamp(2.4rem, 5.2vw, 4.1rem);
+            line-height: 1.02;
+            opacity: 0;
+            transform: translateY(14px);
+            animation: fadeUp .7s .08s var(--ease) forwards;
+        }
+        .hero-role {
+            font-size: clamp(1rem, 1.6vw, 1.25rem);
+            color: var(--accent-2);
+            margin: 16px 0 22px;
+            min-height: 1.6em;
+        }
+        .cursor {
+            animation: blink 1s steps(1) infinite;
+            color: var(--accent-2);
+        }
+        .hero-summary {
+            color: var(--text-dim);
+            max-width: 54ch;
+            font-size: 1.02rem;
+            opacity: 0;
+            transform: translateY(14px);
+            animation: fadeUp .7s .18s var(--ease) forwards;
+        }
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 30px;
+            opacity: 0;
+            transform: translateY(14px);
+            animation: fadeUp .7s .28s var(--ease) forwards;
+        }
+        .hero-meta {
+            margin-top: 26px;
+            color: var(--text-faint);
+            font-size: .82rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(14px);
+            animation: fadeUp .7s .34s var(--ease) forwards;
+        }
+        .hero-meta .dot {
+            color: var(--border);
+        }
+
+        .hero-visual {
+            position: relative;
+            opacity: 0;
+            transform: translateY(18px);
+            animation: fadeUp .8s .3s var(--ease) forwards;
+        }
+        .terminal {
+            background: var(--bg-elev);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 24px 60px -20px rgba(0, 0, 0, .55);
+        }
+        .terminal-bar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg-elev-2);
+        }
+        .terminal-bar .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .terminal-bar .red {
+            background: #ff5f56;
+        }
+        .terminal-bar .yellow {
+            background: #ffbd2e;
+        }
+        .terminal-bar .green {
+            background: #27c93f;
+        }
+        .terminal-title {
+            margin-left: 10px;
+            font-size: .76rem;
+            color: var(--text-faint);
+        }
+        .terminal-body {
+            padding: 20px 18px;
+            font-size: .84rem;
+            min-height: 190px;
+        }
+        .terminal-body p {
+            margin: 0 0 10px;
+            color: var(--text-dim);
+        }
+        .terminal-body .prompt {
+            color: var(--accent);
+            margin-right: 8px;
+        }
+        .terminal-body .out {
+            color: var(--accent-2);
+            padding-left: 20px;
+        }
+        .type-caret {
+            animation: blink 1s steps(1) infinite;
+        }
+
+        .avatar-frame {
+            position: absolute;
+            right: -18px;
+            bottom: -34px;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--bg);
+            box-shadow: 0 0 0 2px var(--accent), 0 12px 30px -10px rgba(0, 0, 0, .6);
+            background: var(--bg-elev-2);
+        }
+        .avatar-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .avatar-frame.img-fallback {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .avatar-frame.img-fallback img {
+            display: none;
+        }
+        .avatar-frame.img-fallback::after {
+            content: "AJ";
+            font-family: var(--font-mono);
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+
+        .scroll-cue {
+            position: absolute;
+            bottom: 28px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 26px;
+            height: 42px;
+            border: 2px solid var(--border);
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            padding-top: 8px;
+        }
+        .scroll-cue span {
+            width: 4px;
+            height: 8px;
+            border-radius: 2px;
+            background: var(--accent);
+            animation: scrollDown 1.8s ease-in-out infinite;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+        @keyframes scrollDown {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            70% {
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(14px);
+                opacity: 0;
+            }
+        }
+
+        /* ---------- Sections ---------- */
+        .section {
+            padding: 110px 0;
+        }
+        .section-alt {
+            background: var(--bg-elev);
+            border-top: 1px solid var(--border-soft);
+            border-bottom: 1px solid var(--border-soft);
+        }
+        .section-title {
+            font-size: clamp(1.7rem, 3vw, 2.4rem);
+            margin: 10px 0 18px;
+        }
+        .section-lede {
+            color: var(--text-dim);
+            max-width: 62ch;
+            margin-bottom: 46px;
+            font-size: 1rem;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity .7s var(--ease), transform .7s var(--ease);
+        }
+        .reveal.in-view {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* ---------- About ---------- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 54px;
+            margin-top: 12px;
+        }
+        .about-text p {
+            color: var(--text-dim);
+            margin-bottom: 16px;
+            font-size: 1.02rem;
+        }
+        .about-text strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .about-facts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            align-content: start;
+        }
+        .fact-card {
+            background: var(--bg-elev);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            transition: border-color .25s var(--ease), transform .25s var(--ease);
+        }
+        .fact-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+        }
+        .fact-label {
+            font-size: .7rem;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            color: var(--accent-2);
+        }
+        .fact-value {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        .fact-sub {
+            color: var(--text-faint);
+            font-size: .82rem;
+        }
+
+        /* ---------- Skills ---------- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 8px;
+        }
+        .skill-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: border-color .25s var(--ease), transform .25s var(--ease);
+        }
+        [data-theme="dark"] .skill-card {
+            background: var(--bg-elev-2);
+        }
+        .skill-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+        .skill-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.02rem;
+            margin-bottom: 16px;
+        }
+        .skill-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 7px;
+            background: var(--accent-soft);
+            color: var(--accent);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: .85rem;
+            font-family: var(--font-mono);
+            flex-shrink: 0;
+        }
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .tag-list li {
+            font-family: var(--font-mono);
+            font-size: .78rem;
+            color: var(--text-dim);
+            border: 1px solid var(--border);
+            padding: 5px 10px;
+            border-radius: 999px;
+            transition: color .2s var(--ease), border-color .2s var(--ease);
+        }
+        .skill-card:hover .tag-list li {
+            border-color: var(--border);
+        }
+        .tag-list li:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .skills-callout-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin-top: 18px;
+        }
+        .callout-card {
+            border: 1px dashed var(--border);
+            border-radius: var(--radius);
+            padding: 20px;
+            background: var(--accent-2-soft);
+        }
+        .callout-tag {
+            display: inline-block;
+            color: var(--accent-2);
+            font-size: .76rem;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+        }
+        .callout-card p {
+            color: var(--text-dim);
+            font-size: .92rem;
+        }
+
+        /* ---------- Experience ---------- */
+        .timeline {
+            position: relative;
+            padding-left: 34px;
+        }
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 6px;
+            top: 6px;
+            bottom: 6px;
+            width: 1px;
+            background: var(--border);
+        }
+        .timeline-item {
+            position: relative;
+            padding-bottom: 8px;
+        }
+        .timeline-marker {
+            position: absolute;
+            left: -34px;
+            top: 4px;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: var(--bg);
+            border: 2px solid var(--accent);
+        }
+        .timeline-content {
+            background: var(--bg-elev);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 26px 28px;
+        }
+        .timeline-head {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 10px;
+            margin-bottom: 4px;
+        }
+        .timeline-head h3 {
+            font-size: 1.15rem;
+        }
+        .timeline-date {
+            color: var(--accent-2);
+            font-size: .8rem;
+        }
+        .timeline-company {
+            color: var(--text-dim);
+            margin-bottom: 16px;
+            font-size: .94rem;
+        }
+        .timeline-list {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+            margin-bottom: 18px;
+        }
+        .timeline-list li {
+            color: var(--text-dim);
+            font-size: .94rem;
+            padding-left: 18px;
+            position: relative;
+        }
+        .timeline-list li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .tag-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .tag-row span {
+            font-family: var(--font-mono);
+            font-size: .74rem;
+            color: var(--accent);
+            background: var(--accent-soft);
+            padding: 4px 10px;
+            border-radius: 5px;
+        }
+
+        /* ---------- Projects ---------- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+        .project-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-l);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform .3s var(--ease), border-color .3s var(--ease), box-shadow .3s var(--ease);
+        }
+        [data-theme="dark"] .project-card {
+            background: var(--bg-elev-2);
+        }
+        .project-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent);
+            box-shadow: 0 18px 40px -18px rgba(0, 0, 0, .5);
+        }
+        .project-shot {
+            height: 150px;
+            background:
+                repeating-linear-gradient(135deg, var(--bg-elev) 0 12px, var(--border-soft) 12px 24px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid var(--border);
+        }
+        .shot-placeholder {
+            font-size: .72rem;
+            color: var(--text-faint);
+            background: var(--bg);
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 1px solid var(--border);
+        }
+        .project-body {
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            flex: 1;
+        }
+        .project-body h3 {
+            font-size: 1.08rem;
+        }
+        .project-body p {
+            color: var(--text-dim);
+            font-size: .92rem;
+            flex: 1;
+        }
+        .project-link {
+            font-family: var(--font-mono);
+            font-size: .82rem;
+            color: var(--accent);
+            align-self: flex-start;
+            transition: gap .2s var(--ease);
+        }
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        /* ---------- Education ---------- */
+        .edu-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+            flex-wrap: wrap;
+            background: var(--bg-elev);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 30px 32px;
+        }
+        .edu-main h3 {
+            font-size: 1.2rem;
+            margin-bottom: 6px;
+        }
+        .edu-org {
+            color: var(--accent);
+            font-size: .92rem;
+            margin-bottom: 10px;
+        }
+        .edu-desc {
+            color: var(--text-dim);
+            font-size: .94rem;
+            max-width: 56ch;
+        }
+        .edu-side {
+            color: var(--text-faint);
+            font-size: .82rem;
+            white-space: nowrap;
+        }
+
+        /* ---------- Achievements ---------- */
+        .achv-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+        .achv-card.placeholder-card {
+            border: 1.5px dashed var(--border);
+            border-radius: var(--radius);
+            padding: 30px 20px;
+            text-align: center;
+            color: var(--text-faint);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-items: center;
+            justify-content: center;
+            min-height: 130px;
+            transition: border-color .25s var(--ease), color .25s var(--ease);
+        }
+        .achv-card.placeholder-card:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+        .achv-card.placeholder-card span {
+            font-size: .86rem;
+        }
+        .achv-card.placeholder-card p {
+            font-size: .78rem;
+        }
+
+        /* ---------- Contact ---------- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-top: 8px;
+        }
+        .contact-card {
+            background: var(--bg-elev);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            position: relative;
+            transition: border-color .25s var(--ease), transform .25s var(--ease);
+        }
+        .contact-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+        .contact-label {
+            color: var(--accent-2);
+            font-size: .72rem;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+        }
+        .contact-value {
+            font-weight: 600;
+            font-size: .96rem;
+            word-break: break-word;
+        }
+        .contact-edit {
+            font-size: .68rem;
+            color: var(--text-faint);
+            position: absolute;
+            top: 16px;
+            right: 16px;
+        }
+        .contact-card-static {
+            cursor: default;
+        }
+
+        .contact-secondary {
+            margin-top: 26px;
+            color: var(--text-dim);
+            font-size: .85rem;
+        }
+        .contact-secondary a {
+            color: var(--text-dim);
+            transition: color .2s var(--ease);
+        }
+        .contact-secondary a:hover {
+            color: var(--accent);
+        }
+        .contact-secondary .dot {
+            margin: 0 8px;
+            color: var(--border);
+        }
+
+        /* ---------- Footer ---------- */
+        .footer {
+            border-top: 1px solid var(--border-soft);
+            padding: 30px 0;
+        }
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+            color: var(--text-faint);
+            font-size: .8rem;
+        }
+
+        .back-to-top {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            z-index: 120;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            background: var(--bg-elev);
+            color: var(--text-dim);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(10px);
+            transition: opacity .3s var(--ease), transform .3s var(--ease), color .2s var(--ease), border-color .2s var(--ease);
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: auto;
+            transform: none;
+        }
+        .back-to-top:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        /* ================= RESPONSIVE ================= */
+        @media (max-width: 980px) {
+            .hero-inner {
+                grid-template-columns: 1fr;
+            }
+            .hero-visual {
+                order: -1;
+                max-width: 420px;
+                margin: 0 auto;
+            }
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .achv-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 760px) {
+            .nav-links {
+                position: fixed;
+                top: var(--nav-h);
+                left: 0;
+                right: 0;
+                background: var(--bg);
+                border-bottom: 1px solid var(--border);
+                flex-direction: column;
+                gap: 0;
+                padding: 8px 28px 18px;
+                transform: translateY(-8px);
+                opacity: 0;
+                pointer-events: none;
+                transition: transform .25s var(--ease), opacity .25s var(--ease);
+            }
+            .nav-links.open {
+                transform: none;
+                opacity: 1;
+                pointer-events: auto;
+            }
+            .nav-links a {
+                padding: 12px 0;
+                border-bottom: 1px solid var(--border-soft);
+            }
+            .nav-toggle {
+                display: flex;
+            }
+
+            .section {
+                padding: 74px 0;
+            }
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            .skills-callout-row {
+                grid-template-columns: 1fr;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .achv-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-facts {
+                grid-template-columns: 1fr 1fr;
+            }
+            .avatar-frame {
+                width: 84px;
+                height: 84px;
+                right: -8px;
+                bottom: -20px;
+            }
+            .edu-card {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .container {
+                padding: 0 18px;
+            }
+            .hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .btn {
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body data-theme="dark">
 
-<!-- Skip link -->
-<a class="skip-link" href="#main">Skip to content</a>
+    <!-- Skip link -->
+    <a class="skip-link" href="#main">Skip to content</a>
 
-<!-- Progress bar -->
-<div class="scroll-progress" id="scrollProgress"></div>
+    <!-- Progress bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
 
-<!-- ================= NAV ================= -->
-<header class="nav" id="nav">
-  <div class="nav-inner">
-    <a href="#hero" class="logo" aria-label="Ayman Al-Jamal — home">
-      <span class="logo-bracket">&lt;</span>AJ<span class="logo-bracket">/&gt;</span>
-    </a>
+    <!-- ================= NAV ================= -->
+    <header class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#hero" class="logo" aria-label="Ayman Al-Jamal — home">
+                <span class="logo-bracket">&lt;</span>AJ<span class="logo-bracket">/&gt;</span>
+            </a>
 
-    <nav class="nav-links" id="navLinks">
-      <a href="#about" data-nav>about</a>
-      <a href="#skills" data-nav>skills</a>
-      <a href="#experience" data-nav>experience</a>
-      <a href="#projects" data-nav>projects</a>
-      <a href="#education" data-nav>education</a>
-      <a href="#achievements" data-nav>achievements</a>
-      <a href="#contact" data-nav>contact</a>
-    </nav>
+            <nav class="nav-links" id="navLinks">
+                <a href="#about" data-nav>about</a>
+                <a href="#skills" data-nav>skills</a>
+                <a href="#experience" data-nav>experience</a>
+                <a href="#projects" data-nav>projects</a>
+                <a href="#education" data-nav>education</a>
+                <a href="#achievements" data-nav>achievements</a>
+                <a href="#contact" data-nav>contact</a>
+            </nav>
 
-    <div class="nav-actions">
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle color theme">
-        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
-        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
-      </button>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-</header>
-
-<main id="main">
-
-  <!-- ================= HERO ================= -->
-  <section class="hero" id="hero">
-    <div class="hero-grid"></div>
-    <div class="container hero-inner">
-
-      <div class="hero-copy">
-        <p class="eyebrow mono">// status: open to internships &amp; full-time roles</p>
-        <h1 class="hero-name">Ayman Al-Jamal</h1>
-        <p class="hero-role mono">
-          <span id="typedRole"></span><span class="cursor" aria-hidden="true">|</span>
-        </p>
-        <p class="hero-summary">
-          Computer Science graduate of Birzeit University and backend-focused software
-          engineer. I build reliable REST APIs and services with Java &amp; Spring Boot,
-          and cross-platform mobile apps with Flutter — most recently as a Backend
-          Engineer Intern at LogesTechs, and as the developer behind Student Bag, a
-          university companion app used by students to manage their academic life.
-        </p>
-
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="Ayman_Jamal_Backend_Engineer_CV.pdf" download>
-            <span>Download CV</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
-          </a>
-          <a class="btn btn-ghost" href="https://github.com/aymanaljamal" target="_blank" rel="noopener">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.75 5.48.75 11.75c0 5.02 3.26 9.28 7.78 10.78.57.1.78-.25.78-.55 0-.27-.01-1.16-.02-2.1-3.17.69-3.84-1.34-3.84-1.34-.52-1.31-1.26-1.66-1.26-1.66-1.03-.7.08-.69.08-.69 1.14.08 1.74 1.17 1.74 1.17 1.01 1.73 2.65 1.23 3.3.94.1-.73.4-1.23.72-1.51-2.53-.29-5.19-1.27-5.19-5.64 0-1.25.44-2.27 1.17-3.07-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.14 1.17a10.9 10.9 0 0 1 5.72 0c2.18-1.48 3.14-1.17 3.14-1.17.62 1.57.23 2.73.11 3.02.73.8 1.17 1.82 1.17 3.07 0 4.38-2.67 5.34-5.21 5.62.41.36.77 1.06.77 2.14 0 1.55-.01 2.79-.01 3.17 0 .3.2.66.79.55A11.26 11.26 0 0 0 23.25 11.75C23.25 5.48 18.27.5 12 .5z"/></svg>
-            <span>View GitHub</span>
-          </a>
-          <a class="btn btn-ghost" href="#contact">
-            <span>Contact Me</span>
-          </a>
-        </div>
-
-        <div class="hero-meta mono">
-          <span>Ramallah / West Bank, Palestine</span>
-          <span class="dot">·</span>
-          <span>B.Sc. Computer Science, Birzeit University</span>
-        </div>
-      </div>
-
-      <div class="hero-visual" aria-hidden="true">
-        <div class="terminal">
-          <div class="terminal-bar">
-            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-            <span class="terminal-title mono">ayman@backend:~</span>
-          </div>
-          <div class="terminal-body mono" id="terminalBody">
-            <p><span class="prompt">$</span> whoami</p>
-            <p class="out">ayman-al-jamal — backend engineer</p>
-            <p><span class="prompt">$</span> cat stack.txt</p>
-            <p class="out">java · spring boot · flutter · postgresql</p>
-            <p><span class="prompt">$</span> ./build_career.sh<span class="type-caret">_</span></p>
-          </div>
-        </div>
-        <div class="avatar-frame">
-          <img src="assets/profile.jpg" alt="Ayman Al-Jamal" onerror="this.parentElement.classList.add('img-fallback')">
-        </div>
-      </div>
-
-    </div>
-    <a href="#about" class="scroll-cue" aria-label="Scroll to About section">
-      <span></span>
-    </a>
-  </section>
-
-  <!-- ================= ABOUT ================= -->
-  <section class="section" id="about">
-    <div class="container">
-      <p class="eyebrow mono">// 01 — about</p>
-      <h2 class="section-title">Building systems that hold up under real use.</h2>
-
-      <div class="about-grid">
-        <div class="about-text">
-          <p>
-            I'm a Computer Science student at <strong>Birzeit University</strong> (2022 – 2026),
-            focused on software engineering, backend development, databases, mobile
-            applications and the fundamentals of AI/ML. My work sits at the intersection
-            of <strong>backend engineering</strong> and <strong>mobile development</strong> —
-            designing the API and data layer a product runs on, then building the
-            Flutter or Android client that people actually use.
-          </p>
-          <p>
-            During my internship at <strong>LogesTechs</strong>, I worked hands-on with
-            Spring Boot, SQL-driven systems, Linux environments and AWS deployment
-            fundamentals, and got early exposure to prompt engineering and AI-assisted
-            features. Outside of internships, I design and ship complete systems on my
-            own — from <strong>Student Bag</strong>, a university companion app, to ERP
-            backends for warehouse and logistics management.
-          </p>
-          <p>
-            I care about clean architecture, dependable APIs and interfaces that don't
-            get in the way — and I enjoy the problem-solving side of engineering as much
-            as the building itself: tracing a bug to its root cause, tightening a slow
-            query, or reworking a data model so the next feature is easy instead of hard.
-          </p>
-        </div>
-
-        <div class="about-facts">
-          <div class="fact-card">
-            <span class="fact-label mono">education</span>
-            <span class="fact-value">B.Sc. Computer Science</span>
-            <span class="fact-sub">Birzeit University · 2022–2026</span>
-          </div>
-          <div class="fact-card">
-            <span class="fact-label mono">focus</span>
-            <span class="fact-value">Backend Engineering</span>
-            <span class="fact-sub">Java · Spring Boot · REST APIs</span>
-          </div>
-          <div class="fact-card">
-            <span class="fact-label mono">also building</span>
-            <span class="fact-value">Mobile Apps</span>
-            <span class="fact-sub">Flutter · Android</span>
-          </div>
-          <div class="fact-card">
-            <span class="fact-label mono">recent role</span>
-            <span class="fact-value">Backend Engineer Intern</span>
-            <span class="fact-sub">LogesTechs · 2025</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= SKILLS ================= -->
-  <section class="section section-alt" id="skills">
-    <div class="container">
-      <p class="eyebrow mono">// 02 — skills</p>
-      <h2 class="section-title">Skill tree.</h2>
-      <p class="section-lede">Organized by the layer of the stack they belong to — from
-        the language up through backend, frontend, data and deployment.</p>
-
-      <div class="skills-grid">
-
-        <div class="skill-card">
-          <h3><span class="skill-icon">{ }</span>Programming Languages</h3>
-          <ul class="tag-list">
-            <li>Java</li><li>Python</li><li>JavaScript</li><li>PHP</li>
-          </ul>
-        </div>
-
-        <div class="skill-card">
-          <h3><span class="skill-icon">&#9881;</span>Backend Development</h3>
-          <ul class="tag-list">
-            <li>Spring Boot</li><li>REST APIs</li><li>GraphQL</li>
-            <li>Hibernate / JPA</li><li>WebFlux</li><li>Microservices</li>
-          </ul>
-        </div>
-
-        <div class="skill-card">
-          <h3><span class="skill-icon">&#9647;</span>Frontend</h3>
-          <ul class="tag-list">
-            <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Flutter (basics)</li>
-          </ul>
-        </div>
-
-        <div class="skill-card">
-          <h3><span class="skill-icon">&#9776;</span>Databases</h3>
-          <ul class="tag-list">
-            <li>MySQL</li><li>SQL</li>
-          </ul>
-        </div>
-
-        <div class="skill-card">
-          <h3><span class="skill-icon">&#9673;</span>DevOps</h3>
-          <ul class="tag-list">
-            <li>Docker</li><li>Docker Compose</li><li>CI/CD</li>
-            <li>GitHub Actions</li><li>Linux</li><li>AWS (basics)</li>
-          </ul>
-        </div>
-
-        <div class="skill-card">
-          <h3><span class="skill-icon">&#10003;</span>Additional Skills</h3>
-          <ul class="tag-list">
-            <li>Software Analysis</li><li>System Analysis</li><li>Problem Solving</li>
-            <li>Quality Assurance</li><li>Software Testing</li><li>Debugging</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="skills-callout-row">
-        <div class="callout-card">
-          <span class="callout-tag mono">python</span>
-          <p>Comfortable using Python and its libraries for analysis, automation and
-            general development work — from scripting to small ML utilities.</p>
-        </div>
-        <div class="callout-card">
-          <span class="callout-tag mono">qa &amp; testing</span>
-          <p>Practiced in software testing concepts, writing test cases, finding and
-            triaging bugs, and debugging applications to steadily improve quality.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= EXPERIENCE ================= -->
-  <section class="section" id="experience">
-    <div class="container">
-      <p class="eyebrow mono">// 03 — experience</p>
-      <h2 class="section-title">Experience.</h2>
-
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <div class="timeline-head">
-              <h3>Backend Engineer Intern</h3>
-              <span class="timeline-date mono">06/2025 – 10/2025</span>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle color theme">
+                    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+                    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+                </button>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
-            <p class="timeline-company">LogesTechs · Ramallah, Palestine</p>
-            <ul class="timeline-list">
-              <li>Trained as a Backend Engineer with hands-on backend development, DevOps and database-driven systems experience.</li>
-              <li>Built and worked with modern backend services using Spring Boot, Java, PHP, FastAPI and GraphQL.</li>
-              <li>Developed SQL skills for database analysis, querying and data relationships.</li>
-              <li>Worked with Linux, GitHub version control and AWS cloud deployment tools.</li>
-              <li>Gained exposure to AI concepts, prompt engineering and AI-powered feature integration.</li>
-            </ul>
-            <div class="tag-row">
-              <span>Spring Boot</span><span>Java</span><span>PHP</span><span>FastAPI</span>
-              <span>GraphQL</span><span>SQL</span><span>Linux</span><span>AWS</span>
+        </div>
+    </header>
+
+    <main id="main">
+
+        <!-- ================= HERO ================= -->
+        <section class="hero" id="hero">
+            <div class="hero-grid"></div>
+            <div class="container hero-inner">
+
+                <div class="hero-copy">
+                    <p class="eyebrow mono">// status: open to internships &amp; full-time roles</p>
+                    <h1 class="hero-name">Ayman Al-Jamal</h1>
+                    <p class="hero-role mono">
+                        <span id="typedRole"></span><span class="cursor" aria-hidden="true">|</span>
+                    </p>
+                    <p class="hero-summary">
+                        Computer Science graduate of Birzeit University and backend-focused software
+                        engineer. I build reliable REST APIs and services with Java &amp; Spring Boot,
+                        and cross-platform mobile apps with Flutter — most recently as a Backend
+                        Engineer Intern at LogesTechs, and as the developer behind Student Bag, a
+                        university companion app used by students to manage their academic life.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="Ayman_Jamal_Backend_Engineer_CV.pdf" download>
+                            <span>Download CV</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
+                        </a>
+                        <a class="btn btn-ghost" href="https://github.com/aymanaljamal" target="_blank" rel="noopener">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.75 5.48.75 11.75c0 5.02 3.26 9.28 7.78 10.78.57.1.78-.25.78-.55 0-.27-.01-1.16-.02-2.1-3.17.69-3.84-1.34-3.84-1.34-.52-1.31-1.26-1.66-1.26-1.66-1.03-.7.08-.69.08-.69 1.14.08 1.74 1.17 1.74 1.17 1.01 1.73 2.65 1.23 3.3.94.1-.73.4-1.23.72-1.51-2.53-.29-5.19-1.27-5.19-5.64 0-1.25.44-2.27 1.17-3.07-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.14 1.17a10.9 10.9 0 0 1 5.72 0c2.18-1.48 3.14-1.17 3.14-1.17.62 1.57.23 2.73.11 3.02.73.8 1.17 1.82 1.17 3.07 0 4.38-2.67 5.34-5.21 5.62.41.36.77 1.06.77 2.14 0 1.55-.01 2.79-.01 3.17 0 .3.2.66.79.55A11.26 11.26 0 0 0 23.25 11.75C23.25 5.48 18.27.5 12 .5z"/></svg>
+                            <span>View GitHub</span>
+                        </a>
+                        <a class="btn btn-ghost" href="#contact">
+                            <span>Contact Me</span>
+                        </a>
+                    </div>
+
+                    <div class="hero-meta mono">
+                        <span>Ramallah / West Bank, Palestine</span>
+                        <span class="dot">·</span>
+                        <span>B.Sc. Computer Science, Birzeit University</span>
+                    </div>
+                </div>
+
+                <div class="hero-visual" aria-hidden="true">
+                    <div class="terminal">
+                        <div class="terminal-bar">
+                            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                            <span class="terminal-title mono">ayman@backend:~</span>
+                        </div>
+                        <div class="terminal-body mono" id="terminalBody">
+                            <p><span class="prompt">$</span> whoami</p>
+                            <p class="out">ayman-al-jamal — backend engineer</p>
+                            <p><span class="prompt">$</span> cat stack.txt</p>
+                            <p class="out">java · spring boot · flutter · postgresql</p>
+                            <p><span class="prompt">$</span> ./build_career.sh<span class="type-caret">_</span></p>
+                        </div>
+                    </div>
+                    <div class="avatar-frame">
+                        <img src="assets/profile.jpg" alt="Ayman Al-Jamal" onerror="this.parentElement.classList.add('img-fallback')">
+                    </div>
+                </div>
+
             </div>
-          </div>
+            <a href="#about" class="scroll-cue" aria-label="Scroll to About section">
+                <span></span>
+            </a>
+        </section>
+
+        <!-- ================= ABOUT ================= -->
+        <section class="section" id="about">
+            <div class="container">
+                <p class="eyebrow mono">// 01 — about</p>
+                <h2 class="section-title">Building systems that hold up under real use.</h2>
+
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>
+                            I'm a Computer Science student at <strong>Birzeit University</strong> (2022 – 2026),
+                            focused on software engineering, backend development, databases, mobile
+                            applications and the fundamentals of AI/ML. My work sits at the intersection
+                            of <strong>backend engineering</strong> and <strong>mobile development</strong> —
+                            designing the API and data layer a product runs on, then building the
+                            Flutter or Android client that people actually use.
+                        </p>
+                        <p>
+                            During my internship at <strong>LogesTechs</strong>, I worked hands-on with
+                            Spring Boot, SQL-driven systems, Linux environments and AWS deployment
+                            fundamentals, and got early exposure to prompt engineering and AI-assisted
+                            features. Outside of internships, I design and ship complete systems on my
+                            own — from <strong>Student Bag</strong>, a university companion app, to ERP
+                            backends for warehouse and logistics management.
+                        </p>
+                        <p>
+                            I care about clean architecture, dependable APIs and interfaces that don't
+                            get in the way — and I enjoy the problem-solving side of engineering as much
+                            as the building itself: tracing a bug to its root cause, tightening a slow
+                            query, or reworking a data model so the next feature is easy instead of hard.
+                        </p>
+                    </div>
+
+                    <div class="about-facts">
+                        <div class="fact-card">
+                            <span class="fact-label mono">education</span>
+                            <span class="fact-value">B.Sc. Computer Science</span>
+                            <span class="fact-sub">Birzeit University · 2022–2026</span>
+                        </div>
+                        <div class="fact-card">
+                            <span class="fact-label mono">focus</span>
+                            <span class="fact-value">Backend Engineering</span>
+                            <span class="fact-sub">Java · Spring Boot · REST APIs</span>
+                        </div>
+                        <div class="fact-card">
+                            <span class="fact-label mono">also building</span>
+                            <span class="fact-value">Mobile Apps</span>
+                            <span class="fact-sub">Flutter · Android</span>
+                        </div>
+                        <div class="fact-card">
+                            <span class="fact-label mono">recent role</span>
+                            <span class="fact-value">Backend Engineer Intern</span>
+                            <span class="fact-sub">LogesTechs · 2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SKILLS ================= -->
+        <section class="section section-alt" id="skills">
+            <div class="container">
+                <p class="eyebrow mono">// 02 — skills</p>
+                <h2 class="section-title">Skill tree.</h2>
+                <p class="section-lede">Organized by the layer of the stack they belong to — from
+                    the language up through backend, frontend, data and deployment.</p>
+
+                <div class="skills-grid">
+
+                    <div class="skill-card">
+                        <h3><span class="skill-icon">{ }</span>Programming Languages</h3>
+                        <ul class="tag-list">
+                            <li>Java</li><li>Python</li><li>JavaScript</li><li>PHP</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3><span class="skill-icon">&#9881;</span>Backend Development</h3>
+                        <ul class="tag-list">
+                            <li>Spring Boot</li><li>REST APIs</li><li>GraphQL</li>
+                            <li>Hibernate / JPA</li><li>WebFlux</li><li>Microservices</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3><span class="skill-icon">&#9647;</span>Frontend</h3>
+                        <ul class="tag-list">
+                            <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Flutter (basics)</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3><span class="skill-icon">&#9776;</span>Databases</h3>
+                        <ul class="tag-list">
+                            <li>MySQL</li><li>SQL</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3><span class="skill-icon">&#9673;</span>DevOps</h3>
+                        <ul class="tag-list">
+                            <li>Docker</li><li>Docker Compose</li><li>CI/CD</li>
+                            <li>GitHub Actions</li><li>Linux</li><li>AWS (basics)</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3><span class="skill-icon">&#10003;</span>Additional Skills</h3>
+                        <ul class="tag-list">
+                            <li>Software Analysis</li><li>System Analysis</li><li>Problem Solving</li>
+                            <li>Quality Assurance</li><li>Software Testing</li><li>Debugging</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="skills-callout-row">
+                    <div class="callout-card">
+                        <span class="callout-tag mono">python</span>
+                        <p>Comfortable using Python and its libraries for analysis, automation and
+                            general development work — from scripting to small ML utilities.</p>
+                    </div>
+                    <div class="callout-card">
+                        <span class="callout-tag mono">qa &amp; testing</span>
+                        <p>Practiced in software testing concepts, writing test cases, finding and
+                            triaging bugs, and debugging applications to steadily improve quality.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= EXPERIENCE ================= -->
+        <section class="section" id="experience">
+            <div class="container">
+                <p class="eyebrow mono">// 03 — experience</p>
+                <h2 class="section-title">Experience.</h2>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-head">
+                                <h3>Backend Engineer Intern</h3>
+                                <span class="timeline-date mono">06/2025 – 10/2025</span>
+                            </div>
+                            <p class="timeline-company">LogesTechs · Ramallah, Palestine</p>
+                            <ul class="timeline-list">
+                                <li>Trained as a Backend Engineer with hands-on backend development, DevOps and database-driven systems experience.</li>
+                                <li>Built and worked with modern backend services using Spring Boot, Java, PHP, FastAPI and GraphQL.</li>
+                                <li>Developed SQL skills for database analysis, querying and data relationships.</li>
+                                <li>Worked with Linux, GitHub version control and AWS cloud deployment tools.</li>
+                                <li>Gained exposure to AI concepts, prompt engineering and AI-powered feature integration.</li>
+                            </ul>
+                            <div class="tag-row">
+                                <span>Spring Boot</span><span>Java</span><span>PHP</span><span>FastAPI</span>
+                                <span>GraphQL</span><span>SQL</span><span>Linux</span><span>AWS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PROJECTS ================= -->
+        <section class="section section-alt" id="projects">
+            <div class="container">
+                <p class="eyebrow mono">// 04 — projects</p>
+                <h2 class="section-title">Selected projects.</h2>
+
+                <div class="projects-grid" id="projectsGrid">
+
+                    <article class="project-card">
+                        <div class="project-shot" aria-hidden="true">
+                            <span class="shot-placeholder mono">screenshot placeholder</span>
+                        </div>
+                        <div class="project-body">
+                            <h3>Student Bag App</h3>
+                            <p>University companion app — schedules, tasks, notes, resources,
+                                notifications, analytics and role-based dashboards for students.</p>
+                            <div class="tag-row"><span>Flutter</span><span>Spring Boot</span><span>Firebase</span><span>PostgreSQL</span></div>
+                            <a class="project-link" href="https://github.com/aymanaljamal/student-bag-flutter" target="_blank" rel="noopener">View on GitHub →</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-shot" aria-hidden="true">
+                            <span class="shot-placeholder mono">screenshot placeholder</span>
+                        </div>
+                        <div class="project-body">
+                            <h3>Student Bag Backend</h3>
+                            <p>Backend API powering the Student Bag system — authentication,
+                                notifications, events, resources and analytics.</p>
+                            <div class="tag-row"><span>Spring Boot</span><span>REST APIs</span><span>PostgreSQL</span><span>JPA/Hibernate</span></div>
+                            <a class="project-link" href="https://github.com/aymanaljamal/student-bag-backend" target="_blank" rel="noopener">View on GitHub →</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-shot" aria-hidden="true">
+                            <span class="shot-placeholder mono">screenshot placeholder</span>
+                        </div>
+                        <div class="project-body">
+                            <h3>Elite Car Rental System</h3>
+                            <p>Car rental platform with JWT security, role-based access, booking
+                                management and Google Maps integration.</p>
+                            <div class="tag-row"><span>Android</span><span>Spring Boot</span><span>MySQL</span><span>Firebase</span></div>
+                            <a class="project-link" href="https://github.com/aymanaljamal/EliteCar-Rental-System" target="_blank" rel="noopener">View on GitHub →</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-shot" aria-hidden="true">
+                            <span class="shot-placeholder mono">screenshot placeholder</span>
+                        </div>
+                        <div class="project-body">
+                            <h3>Warehouse Inventory &amp; Logistics ERP</h3>
+                            <p>ERP backend for warehouse inventory, product logistics, order
+                                processing, delivery and stock tracking.</p>
+                            <div class="tag-row"><span>Spring Boot</span><span>REST APIs</span><span>JPA/Hibernate</span><span>MySQL</span></div>
+                            <a class="project-link" href="https://github.com/aymanaljamal/ERB-Warehouse-Product-System" target="_blank" rel="noopener">View on GitHub →</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-shot" aria-hidden="true">
+                            <span class="shot-placeholder mono">screenshot placeholder</span>
+                        </div>
+                        <div class="project-body">
+                            <h3>News Headline Classifier</h3>
+                            <p>ML GUI application that classifies news headlines, with model
+                                comparison and evaluation metrics.</p>
+                            <div class="tag-row"><span>TF-IDF</span><span>Decision Tree</span><span>Logistic Regression</span></div>
+                            <a class="project-link" href="https://github.com/aymanaljamal/news-headline-classifier" target="_blank" rel="noopener">View on GitHub →</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-shot" aria-hidden="true">
+                            <span class="shot-placeholder mono">screenshot placeholder</span>
+                        </div>
+                        <div class="project-body">
+                            <h3>Genetic Password Cracker</h3>
+                            <p>Educational simulation of a genetic algorithm with convergence
+                                visualization.</p>
+                            <div class="tag-row"><span>Python</span><span>Tkinter</span></div>
+                            <a class="project-link" href="https://github.com/aymanaljamal/genetic-password-cracker" target="_blank" rel="noopener">View on GitHub →</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-shot" aria-hidden="true">
+                            <span class="shot-placeholder mono">screenshot placeholder</span>
+                        </div>
+                        <div class="project-body">
+                            <h3>Flat Rental Management System</h3>
+                            <p>Web app for flat search, rentals, appointments, messaging and
+                                role-based dashboards.</p>
+                            <div class="tag-row"><span>PHP</span><span>HTML</span><span>CSS</span><span>MySQL</span></div>
+                            <a class="project-link" href="https://github.com/aymanaljamal/comp334-flat-rent-system" target="_blank" rel="noopener">View on GitHub →</a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= EDUCATION ================= -->
+        <section class="section" id="education">
+            <div class="container">
+                <p class="eyebrow mono">// 05 — education</p>
+                <h2 class="section-title">Education.</h2>
+
+                <div class="edu-card">
+                    <div class="edu-main">
+                        <h3>B.Sc. in Computer Science</h3>
+                        <p class="edu-org">Birzeit University</p>
+                        <p class="edu-desc">Focused on software engineering, backend development,
+                            databases, mobile applications and AI/ML fundamentals.</p>
+                    </div>
+                    <div class="edu-side mono">
+                        <span>07/2022 – 07/2026</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= ACHIEVEMENTS ================= -->
+        <section class="section section-alt" id="achievements">
+            <div class="container">
+                <p class="eyebrow mono">// 06 — achievements</p>
+                <h2 class="section-title">Certificates &amp; achievements.</h2>
+                <p class="section-lede">Reserved for certifications, course completions and
+                    awards — add yours here as you earn them.</p>
+
+                <div class="achv-grid">
+                    <div class="achv-card placeholder-card">
+                        <span class="mono">+ add certificate</span>
+                        <p>e.g. course name, issuing organization, date</p>
+                    </div>
+                    <div class="achv-card placeholder-card">
+                        <span class="mono">+ add certificate</span>
+                        <p>e.g. course name, issuing organization, date</p>
+                    </div>
+                    <div class="achv-card placeholder-card">
+                        <span class="mono">+ add certificate</span>
+                        <p>e.g. course name, issuing organization, date</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CONTACT ================= -->
+        <section class="section" id="contact">
+            <div class="container">
+                <p class="eyebrow mono">// 07 — contact</p>
+                <h2 class="section-title">Let's build something.</h2>
+                <p class="section-lede">Open to backend engineering and mobile development
+                    internships and full-time roles. Reach out any of these ways.</p>
+
+                <div class="contact-grid">
+                    <a class="contact-card" href="mailto:your.email@example.com">
+                        <span class="contact-label mono">email</span>
+                        <span class="contact-value">your.email@example.com</span>
+                        <span class="contact-edit mono">edit me</span>
+                    </a>
+                    <a class="contact-card" href="https://www.linkedin.com/in/ayman-jamal-0a8416332" target="_blank" rel="noopener">
+                        <span class="contact-label mono">linkedin</span>
+                        <span class="contact-value">/in/ayman-jamal</span>
+                    </a>
+                    <a class="contact-card" href="https://github.com/aymanaljamal" target="_blank" rel="noopener">
+                        <span class="contact-label mono">github</span>
+                        <span class="contact-value">@aymanaljamal</span>
+                    </a>
+                    <div class="contact-card contact-card-static">
+                        <span class="contact-label mono">location</span>
+                        <span class="contact-value">Ramallah, Palestine</span>
+                        <span class="contact-edit mono">edit me</span>
+                    </div>
+                </div>
+
+                <div class="contact-secondary mono">
+                    <a href="https://gitlab.com/ayman.aljamal2017" target="_blank" rel="noopener">GitLab</a>
+                    <span class="dot">·</span>
+                    <a href="https://hub.docker.com/u/aymandocker219" target="_blank" rel="noopener">Docker Hub</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <span class="mono">© <span id="year"></span> Ayman Al-Jamal</span>
+            <span class="footer-line mono">designed &amp; built with HTML · CSS · JS</span>
         </div>
-      </div>
-    </div>
-  </section>
+    </footer>
 
-  <!-- ================= PROJECTS ================= -->
-  <section class="section section-alt" id="projects">
-    <div class="container">
-      <p class="eyebrow mono">// 04 — projects</p>
-      <h2 class="section-title">Selected projects.</h2>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </button>
 
-      <div class="projects-grid" id="projectsGrid">
+    <script>
+        /* ==========================================================
+           Ayman Al-Jamal — Portfolio — script.js
+           ========================================================== */
+        (function() {
+            "use strict";
 
-        <article class="project-card">
-          <div class="project-shot" aria-hidden="true">
-            <span class="shot-placeholder mono">screenshot placeholder</span>
-          </div>
-          <div class="project-body">
-            <h3>Student Bag App</h3>
-            <p>University companion app — schedules, tasks, notes, resources,
-              notifications, analytics and role-based dashboards for students.</p>
-            <div class="tag-row"><span>Flutter</span><span>Spring Boot</span><span>Firebase</span><span>PostgreSQL</span></div>
-            <a class="project-link" href="https://github.com/aymanaljamal/student-bag-flutter" target="_blank" rel="noopener">View on GitHub →</a>
-          </div>
-        </article>
+            /* ---------- Year in footer ---------- */
+            var yearEl = document.getElementById("year");
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-        <article class="project-card">
-          <div class="project-shot" aria-hidden="true">
-            <span class="shot-placeholder mono">screenshot placeholder</span>
-          </div>
-          <div class="project-body">
-            <h3>Student Bag Backend</h3>
-            <p>Backend API powering the Student Bag system — authentication,
-              notifications, events, resources and analytics.</p>
-            <div class="tag-row"><span>Spring Boot</span><span>REST APIs</span><span>PostgreSQL</span><span>JPA/Hibernate</span></div>
-            <a class="project-link" href="https://github.com/aymanaljamal/student-bag-backend" target="_blank" rel="noopener">View on GitHub →</a>
-          </div>
-        </article>
+            /* ---------- Theme toggle (persisted) ---------- */
+            var THEME_KEY = "aj-portfolio-theme";
+            var body = document.body;
+            var themeToggle = document.getElementById("themeToggle");
 
-        <article class="project-card">
-          <div class="project-shot" aria-hidden="true">
-            <span class="shot-placeholder mono">screenshot placeholder</span>
-          </div>
-          <div class="project-body">
-            <h3>Elite Car Rental System</h3>
-            <p>Car rental platform with JWT security, role-based access, booking
-              management and Google Maps integration.</p>
-            <div class="tag-row"><span>Android</span><span>Spring Boot</span><span>MySQL</span><span>Firebase</span></div>
-            <a class="project-link" href="https://github.com/aymanaljamal/EliteCar-Rental-System" target="_blank" rel="noopener">View on GitHub →</a>
-          </div>
-        </article>
+            function applyTheme(theme) {
+                body.setAttribute("data-theme", theme);
+                try { localStorage.setItem(THEME_KEY, theme); } catch (e) {}
+            }
 
-        <article class="project-card">
-          <div class="project-shot" aria-hidden="true">
-            <span class="shot-placeholder mono">screenshot placeholder</span>
-          </div>
-          <div class="project-body">
-            <h3>Warehouse Inventory &amp; Logistics ERP</h3>
-            <p>ERP backend for warehouse inventory, product logistics, order
-              processing, delivery and stock tracking.</p>
-            <div class="tag-row"><span>Spring Boot</span><span>REST APIs</span><span>JPA/Hibernate</span><span>MySQL</span></div>
-            <a class="project-link" href="https://github.com/aymanaljamal/ERB-Warehouse-Product-System" target="_blank" rel="noopener">View on GitHub →</a>
-          </div>
-        </article>
+            (function initTheme() {
+                var saved = null;
+                try { saved = localStorage.getItem(THEME_KEY); } catch (e) {}
+                if (saved) {
+                    applyTheme(saved);
+                } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) {
+                    applyTheme("light");
+                }
+            })();
 
-        <article class="project-card">
-          <div class="project-shot" aria-hidden="true">
-            <span class="shot-placeholder mono">screenshot placeholder</span>
-          </div>
-          <div class="project-body">
-            <h3>News Headline Classifier</h3>
-            <p>ML GUI application that classifies news headlines, with model
-              comparison and evaluation metrics.</p>
-            <div class="tag-row"><span>TF-IDF</span><span>Decision Tree</span><span>Logistic Regression</span></div>
-            <a class="project-link" href="https://github.com/aymanaljamal/news-headline-classifier" target="_blank" rel="noopener">View on GitHub →</a>
-          </div>
-        </article>
+            if (themeToggle) {
+                themeToggle.addEventListener("click", function() {
+                    var current = body.getAttribute("data-theme") === "light" ? "dark" : "light";
+                    applyTheme(current);
+                });
+            }
 
-        <article class="project-card">
-          <div class="project-shot" aria-hidden="true">
-            <span class="shot-placeholder mono">screenshot placeholder</span>
-          </div>
-          <div class="project-body">
-            <h3>Genetic Password Cracker</h3>
-            <p>Educational simulation of a genetic algorithm with convergence
-              visualization.</p>
-            <div class="tag-row"><span>Python</span><span>Tkinter</span></div>
-            <a class="project-link" href="https://github.com/aymanaljamal/genetic-password-cracker" target="_blank" rel="noopener">View on GitHub →</a>
-          </div>
-        </article>
+            /* ---------- Mobile nav toggle ---------- */
+            var navToggle = document.getElementById("navToggle");
+            var navLinks = document.getElementById("navLinks");
 
-        <article class="project-card">
-          <div class="project-shot" aria-hidden="true">
-            <span class="shot-placeholder mono">screenshot placeholder</span>
-          </div>
-          <div class="project-body">
-            <h3>Flat Rental Management System</h3>
-            <p>Web app for flat search, rentals, appointments, messaging and
-              role-based dashboards.</p>
-            <div class="tag-row"><span>PHP</span><span>HTML</span><span>CSS</span><span>MySQL</span></div>
-            <a class="project-link" href="https://github.com/aymanaljamal/comp334-flat-rent-system" target="_blank" rel="noopener">View on GitHub →</a>
-          </div>
-        </article>
+            if (navToggle && navLinks) {
+                navToggle.addEventListener("click", function() {
+                    var isOpen = navLinks.classList.toggle("open");
+                    navToggle.classList.toggle("open", isOpen);
+                    navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+                });
 
-      </div>
-    </div>
-  </section>
+                navLinks.querySelectorAll("a").forEach(function(link) {
+                    link.addEventListener("click", function() {
+                        navLinks.classList.remove("open");
+                        navToggle.classList.remove("open");
+                        navToggle.setAttribute("aria-expanded", "false");
+                    });
+                });
+            }
 
-  <!-- ================= EDUCATION ================= -->
-  <section class="section" id="education">
-    <div class="container">
-      <p class="eyebrow mono">// 05 — education</p>
-      <h2 class="section-title">Education.</h2>
+            /* ---------- Nav background on scroll + scroll progress + back-to-top ---------- */
+            var navEl = document.getElementById("nav");
+            var progressEl = document.getElementById("scrollProgress");
+            var backToTop = document.getElementById("backToTop");
 
-      <div class="edu-card">
-        <div class="edu-main">
-          <h3>B.Sc. in Computer Science</h3>
-          <p class="edu-org">Birzeit University</p>
-          <p class="edu-desc">Focused on software engineering, backend development,
-            databases, mobile applications and AI/ML fundamentals.</p>
-        </div>
-        <div class="edu-side mono">
-          <span>07/2022 – 07/2026</span>
-        </div>
-      </div>
-    </div>
-  </section>
+            function onScroll() {
+                var scrollY = window.scrollY || window.pageYOffset;
 
-  <!-- ================= ACHIEVEMENTS ================= -->
-  <section class="section section-alt" id="achievements">
-    <div class="container">
-      <p class="eyebrow mono">// 06 — achievements</p>
-      <h2 class="section-title">Certificates &amp; achievements.</h2>
-      <p class="section-lede">Reserved for certifications, course completions and
-        awards — add yours here as you earn them.</p>
+                if (navEl) navEl.classList.toggle("scrolled", scrollY > 12);
 
-      <div class="achv-grid">
-        <div class="achv-card placeholder-card">
-          <span class="mono">+ add certificate</span>
-          <p>e.g. course name, issuing organization, date</p>
-        </div>
-        <div class="achv-card placeholder-card">
-          <span class="mono">+ add certificate</span>
-          <p>e.g. course name, issuing organization, date</p>
-        </div>
-        <div class="achv-card placeholder-card">
-          <span class="mono">+ add certificate</span>
-          <p>e.g. course name, issuing organization, date</p>
-        </div>
-      </div>
-    </div>
-  </section>
+                if (progressEl) {
+                    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                    var pct = docHeight > 0 ? (scrollY / docHeight) * 100 : 0;
+                    progressEl.style.width = pct + "%";
+                }
 
-  <!-- ================= CONTACT ================= -->
-  <section class="section" id="contact">
-    <div class="container">
-      <p class="eyebrow mono">// 07 — contact</p>
-      <h2 class="section-title">Let's build something.</h2>
-      <p class="section-lede">Open to backend engineering and mobile development
-        internships and full-time roles. Reach out any of these ways.</p>
+                if (backToTop) backToTop.classList.toggle("visible", scrollY > 600);
+            }
+            window.addEventListener("scroll", onScroll, { passive: true });
+            onScroll();
 
-      <div class="contact-grid">
-        <a class="contact-card" href="mailto:your.email@example.com">
-          <span class="contact-label mono">email</span>
-          <span class="contact-value">your.email@example.com</span>
-          <span class="contact-edit mono">edit me</span>
-        </a>
-        <a class="contact-card" href="https://www.linkedin.com/in/ayman-jamal-0a8416332" target="_blank" rel="noopener">
-          <span class="contact-label mono">linkedin</span>
-          <span class="contact-value">/in/ayman-jamal</span>
-        </a>
-        <a class="contact-card" href="https://github.com/aymanaljamal" target="_blank" rel="noopener">
-          <span class="contact-label mono">github</span>
-          <span class="contact-value">@aymanaljamal</span>
-        </a>
-        <div class="contact-card contact-card-static">
-          <span class="contact-label mono">location</span>
-          <span class="contact-value">Ramallah, Palestine</span>
-          <span class="contact-edit mono">edit me</span>
-        </div>
-      </div>
+            if (backToTop) {
+                backToTop.addEventListener("click", function() {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                });
+            }
 
-      <div class="contact-secondary mono">
-        <a href="https://gitlab.com/ayman.aljamal2017" target="_blank" rel="noopener">GitLab</a>
-        <span class="dot">·</span>
-        <a href="https://hub.docker.com/u/aymandocker219" target="_blank" rel="noopener">Docker Hub</a>
-      </div>
-    </div>
-  </section>
+            /* ---------- Scrollspy: highlight active nav link ---------- */
+            var sections = Array.prototype.slice.call(document.querySelectorAll("main .section, #hero"));
+            var navAnchors = Array.prototype.slice.call(document.querySelectorAll("[data-nav]"));
 
-</main>
+            if ("IntersectionObserver" in window && sections.length && navAnchors.length) {
+                var spy = new IntersectionObserver(
+                    function(entries) {
+                        entries.forEach(function(entry) {
+                            if (!entry.isIntersecting) return;
+                            var id = entry.target.getAttribute("id");
+                            navAnchors.forEach(function(a) {
+                                a.classList.toggle("active", a.getAttribute("href") === "#" + id);
+                            });
+                        });
+                    }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
+                );
+                sections.forEach(function(s) { spy.observe(s); });
+            }
 
-<!-- ================= FOOTER ================= -->
-<footer class="footer">
-  <div class="container footer-inner">
-    <span class="mono">© <span id="year"></span> Ayman Al-Jamal</span>
-    <span class="footer-line mono">designed &amp; built with HTML · CSS · JS</span>
-  </div>
-</footer>
+            /* ---------- Scroll reveal ---------- */
+            var revealTargets = document.querySelectorAll(
+                ".fact-card, .skill-card, .callout-card, .timeline-item, .project-card, .edu-card, .achv-card, .contact-card, .section-title, .section-lede"
+            );
+            revealTargets.forEach(function(el) { el.classList.add("reveal"); });
 
-<button class="back-to-top" id="backToTop" aria-label="Back to top">
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-</button>
+            if ("IntersectionObserver" in window) {
+                var revealObserver = new IntersectionObserver(
+                    function(entries, obs) {
+                        entries.forEach(function(entry, i) {
+                            if (entry.isIntersecting) {
+                                setTimeout(function() {
+                                    entry.target.classList.add("in-view");
+                                }, (i % 6) * 60);
+                                obs.unobserve(entry.target);
+                            }
+                        });
+                    }, { threshold: 0.12, rootMargin: "0px 0px -60px 0px" }
+                );
+                revealTargets.forEach(function(el) { revealObserver.observe(el); });
+            } else {
+                revealTargets.forEach(function(el) { el.classList.add("in-view"); });
+            }
 
-<script src="script.js"></script>
+            /* ---------- Typing animation for hero role ---------- */
+            var typedEl = document.getElementById("typedRole");
+            var roles = [
+                "Backend Engineer — Java & Spring Boot",
+                "Flutter & Android Developer",
+                "ERP & LMS Systems Developer",
+                "Computer Science @ Birzeit University"
+            ];
+
+            if (typedEl && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                var roleIndex = 0,
+                    charIndex = 0,
+                    deleting = false;
+
+                function typeLoop() {
+                    var current = roles[roleIndex];
+
+                    if (!deleting) {
+                        charIndex++;
+                        typedEl.textContent = current.slice(0, charIndex);
+                        if (charIndex === current.length) {
+                            deleting = true;
+                            setTimeout(typeLoop, 1600);
+                            return;
+                        }
+                    } else {
+                        charIndex--;
+                        typedEl.textContent = current.slice(0, charIndex);
+                        if (charIndex === 0) {
+                            deleting = false;
+                            roleIndex = (roleIndex + 1) % roles.length;
+                        }
+                    }
+                    setTimeout(typeLoop, deleting ? 28 : 46);
+                }
+                typeLoop();
+            } else if (typedEl) {
+                typedEl.textContent = roles[0];
+            }
+
+        })();
+    </script>
+
 </body>
 </html>
