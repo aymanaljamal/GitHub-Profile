@@ -1,24 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ayman Al-Jamal — Backend Engineer & Mobile Developer</title>
-    <meta name="description" content="Ayman Al-Jamal — Backend Engineer specializing in Java, Spring Boot and REST APIs, and Flutter/Android mobile developer. Computer Science graduate of Birzeit University.">
-    <meta name="keywords" content="Ayman Al-Jamal, Backend Engineer, Spring Boot, Java Developer, Flutter Developer, Android Developer, Birzeit University, Software Engineer Portfolio">
-    <meta name="author" content="Ayman Al-Jamal">
-    <meta name="theme-color" content="#0a0d13">
+    <meta name="description" content="Ayman Al-Jamal — Backend Engineer specializing in Java, Spring Boot and REST APIs, and Flutter/Android mobile developer. Computer Science graduate of Birzeit University." />
+    <meta name="theme-color" content="#0a0d13" />
 
     <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Ayman Al-Jamal — Backend Engineer & Mobile Developer">
-    <meta property="og:description" content="Backend Engineer (Java / Spring Boot) and Flutter/Android developer. Computer Science, Birzeit University.">
-    <meta property="og:image" content="assets/preview.png">
+    <meta property="og:title" content="Ayman Al-Jamal — Backend Engineer & Mobile Developer" />
+    <meta property="og:description" content="Backend Engineer (Java / Spring Boot) and Flutter/Android developer. Computer Science, Birzeit University." />
 
-    <link rel="icon" href="data:,">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:," />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
     <style>
         /* ==========================================================
@@ -837,23 +833,6 @@
             border-color: var(--accent);
             box-shadow: 0 18px 40px -18px rgba(0, 0, 0, .5);
         }
-        .project-shot {
-            height: 150px;
-            background:
-                repeating-linear-gradient(135deg, var(--bg-elev) 0 12px, var(--border-soft) 12px 24px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-bottom: 1px solid var(--border);
-        }
-        .shot-placeholder {
-            font-size: .72rem;
-            color: var(--text-faint);
-            background: var(--bg);
-            padding: 5px 10px;
-            border-radius: 5px;
-            border: 1px solid var(--border);
-        }
         .project-body {
             padding: 22px;
             display: flex;
@@ -895,6 +874,16 @@
         .edu-main h3 {
             font-size: 1.2rem;
             margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .edu-main h3 img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            background: transparent;
+            border-radius: 4px;
         }
         .edu-org {
             color: var(--accent);
@@ -910,37 +899,6 @@
             color: var(--text-faint);
             font-size: .82rem;
             white-space: nowrap;
-        }
-
-        /* ---------- Achievements ---------- */
-        .achv-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
-        .achv-card.placeholder-card {
-            border: 1.5px dashed var(--border);
-            border-radius: var(--radius);
-            padding: 30px 20px;
-            text-align: center;
-            color: var(--text-faint);
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            align-items: center;
-            justify-content: center;
-            min-height: 130px;
-            transition: border-color .25s var(--ease), color .25s var(--ease);
-        }
-        .achv-card.placeholder-card:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-        }
-        .achv-card.placeholder-card span {
-            font-size: .86rem;
-        }
-        .achv-card.placeholder-card p {
-            font-size: .78rem;
         }
 
         /* ---------- Contact ---------- */
@@ -975,13 +933,6 @@
             font-weight: 600;
             font-size: .96rem;
             word-break: break-word;
-        }
-        .contact-edit {
-            font-size: .68rem;
-            color: var(--text-faint);
-            position: absolute;
-            top: 16px;
-            right: 16px;
         }
         .contact-card-static {
             cursor: default;
@@ -1069,9 +1020,6 @@
             .contact-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            .achv-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
         }
 
         @media (max-width: 760px) {
@@ -1116,9 +1064,6 @@
                 grid-template-columns: 1fr;
             }
             .contact-grid {
-                grid-template-columns: 1fr;
-            }
-            .achv-grid {
                 grid-template-columns: 1fr;
             }
             .about-facts {
@@ -1170,7 +1115,6 @@
                 <a href="#experience" data-nav>experience</a>
                 <a href="#projects" data-nav>projects</a>
                 <a href="#education" data-nav>education</a>
-                <a href="#achievements" data-nav>achievements</a>
                 <a href="#contact" data-nav>contact</a>
             </nav>
 
@@ -1208,7 +1152,7 @@
                     </p>
 
                     <div class="hero-actions">
-                        <a class="btn btn-primary" href="Ayman_Jamal_Backend_Engineer_CV.pdf" download>
+                        <a class="btn btn-primary" href="https://github.com/aymanaljamal/GitHub-Profile/raw/main/Ayman_Jamal_Backend_Engineer_CV.pdf" download>
                             <span>Download CV</span>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
                         </a>
@@ -1243,7 +1187,7 @@
                         </div>
                     </div>
                     <div class="avatar-frame">
-                        <img src="assets/profile.jpg" alt="Ayman Al-Jamal" onerror="this.parentElement.classList.add('img-fallback')">
+                        <img src="https://github.com/aymanaljamal/GitHub-Profile/blob/main/Ayman_Aljamal.png?raw=true" alt="Ayman Al-Jamal" onerror="this.parentElement.classList.add('img-fallback')">
                     </div>
                 </div>
 
@@ -1423,9 +1367,6 @@
                 <div class="projects-grid" id="projectsGrid">
 
                     <article class="project-card">
-                        <div class="project-shot" aria-hidden="true">
-                            <span class="shot-placeholder mono">screenshot placeholder</span>
-                        </div>
                         <div class="project-body">
                             <h3>Student Bag App</h3>
                             <p>University companion app — schedules, tasks, notes, resources,
@@ -1436,9 +1377,6 @@
                     </article>
 
                     <article class="project-card">
-                        <div class="project-shot" aria-hidden="true">
-                            <span class="shot-placeholder mono">screenshot placeholder</span>
-                        </div>
                         <div class="project-body">
                             <h3>Student Bag Backend</h3>
                             <p>Backend API powering the Student Bag system — authentication,
@@ -1449,9 +1387,6 @@
                     </article>
 
                     <article class="project-card">
-                        <div class="project-shot" aria-hidden="true">
-                            <span class="shot-placeholder mono">screenshot placeholder</span>
-                        </div>
                         <div class="project-body">
                             <h3>Elite Car Rental System</h3>
                             <p>Car rental platform with JWT security, role-based access, booking
@@ -1462,9 +1397,6 @@
                     </article>
 
                     <article class="project-card">
-                        <div class="project-shot" aria-hidden="true">
-                            <span class="shot-placeholder mono">screenshot placeholder</span>
-                        </div>
                         <div class="project-body">
                             <h3>Warehouse Inventory &amp; Logistics ERP</h3>
                             <p>ERP backend for warehouse inventory, product logistics, order
@@ -1475,9 +1407,6 @@
                     </article>
 
                     <article class="project-card">
-                        <div class="project-shot" aria-hidden="true">
-                            <span class="shot-placeholder mono">screenshot placeholder</span>
-                        </div>
                         <div class="project-body">
                             <h3>News Headline Classifier</h3>
                             <p>ML GUI application that classifies news headlines, with model
@@ -1488,9 +1417,6 @@
                     </article>
 
                     <article class="project-card">
-                        <div class="project-shot" aria-hidden="true">
-                            <span class="shot-placeholder mono">screenshot placeholder</span>
-                        </div>
                         <div class="project-body">
                             <h3>Genetic Password Cracker</h3>
                             <p>Educational simulation of a genetic algorithm with convergence
@@ -1501,9 +1427,6 @@
                     </article>
 
                     <article class="project-card">
-                        <div class="project-shot" aria-hidden="true">
-                            <span class="shot-placeholder mono">screenshot placeholder</span>
-                        </div>
                         <div class="project-body">
                             <h3>Flat Rental Management System</h3>
                             <p>Web app for flat search, rentals, appointments, messaging and
@@ -1525,7 +1448,10 @@
 
                 <div class="edu-card">
                     <div class="edu-main">
-                        <h3>B.Sc. in Computer Science</h3>
+                        <h3>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTotCqERuZAlZzTnrVl0-L0dIt782qzwqqJSjSD5Kj8zYTc07BQcjYkx2I&s=10" alt="Birzeit University Logo" />
+                            B.Sc. in Computer Science
+                        </h3>
                         <p class="edu-org">Birzeit University</p>
                         <p class="edu-desc">Focused on software engineering, backend development,
                             databases, mobile applications and AI/ML fundamentals.</p>
@@ -1537,44 +1463,18 @@
             </div>
         </section>
 
-        <!-- ================= ACHIEVEMENTS ================= -->
-        <section class="section section-alt" id="achievements">
-            <div class="container">
-                <p class="eyebrow mono">// 06 — achievements</p>
-                <h2 class="section-title">Certificates &amp; achievements.</h2>
-                <p class="section-lede">Reserved for certifications, course completions and
-                    awards — add yours here as you earn them.</p>
-
-                <div class="achv-grid">
-                    <div class="achv-card placeholder-card">
-                        <span class="mono">+ add certificate</span>
-                        <p>e.g. course name, issuing organization, date</p>
-                    </div>
-                    <div class="achv-card placeholder-card">
-                        <span class="mono">+ add certificate</span>
-                        <p>e.g. course name, issuing organization, date</p>
-                    </div>
-                    <div class="achv-card placeholder-card">
-                        <span class="mono">+ add certificate</span>
-                        <p>e.g. course name, issuing organization, date</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- ================= CONTACT ================= -->
-        <section class="section" id="contact">
+        <section class="section section-alt" id="contact">
             <div class="container">
-                <p class="eyebrow mono">// 07 — contact</p>
+                <p class="eyebrow mono">// 06 — contact</p>
                 <h2 class="section-title">Let's build something.</h2>
                 <p class="section-lede">Open to backend engineering and mobile development
                     internships and full-time roles. Reach out any of these ways.</p>
 
                 <div class="contact-grid">
-                    <a class="contact-card" href="mailto:your.email@example.com">
+                    <a class="contact-card" href="mailto:aymanaljamal@gmail.com">
                         <span class="contact-label mono">email</span>
-                        <span class="contact-value">your.email@example.com</span>
-                        <span class="contact-edit mono">edit me</span>
+                        <span class="contact-value">aymanaljamal@gmail.com</span>
                     </a>
                     <a class="contact-card" href="https://www.linkedin.com/in/ayman-jamal-0a8416332" target="_blank" rel="noopener">
                         <span class="contact-label mono">linkedin</span>
@@ -1587,7 +1487,6 @@
                     <div class="contact-card contact-card-static">
                         <span class="contact-label mono">location</span>
                         <span class="contact-value">Ramallah, Palestine</span>
-                        <span class="contact-edit mono">edit me</span>
                     </div>
                 </div>
 
@@ -1595,6 +1494,12 @@
                     <a href="https://gitlab.com/ayman.aljamal2017" target="_blank" rel="noopener">GitLab</a>
                     <span class="dot">·</span>
                     <a href="https://hub.docker.com/u/aymandocker219" target="_blank" rel="noopener">Docker Hub</a>
+                    <span class="dot">·</span>
+                    <a href="https://www.facebook.com/share/1GarkogthV/" target="_blank" rel="noopener">Facebook</a>
+                    <span class="dot">·</span>
+                    <a href="https://www.threads.net/@abu_aljamalll" target="_blank" rel="noopener">Threads</a>
+                    <span class="dot">·</span>
+                    <a href="https://www.instagram.com/abu_aljamalll" target="_blank" rel="noopener">Instagram</a>
                 </div>
             </div>
         </section>
@@ -1719,7 +1624,7 @@
 
             /* ---------- Scroll reveal ---------- */
             var revealTargets = document.querySelectorAll(
-                ".fact-card, .skill-card, .callout-card, .timeline-item, .project-card, .edu-card, .achv-card, .contact-card, .section-title, .section-lede"
+                ".fact-card, .skill-card, .callout-card, .timeline-item, .project-card, .edu-card, .contact-card, .section-title, .section-lede"
             );
             revealTargets.forEach(function(el) { el.classList.add("reveal"); });
 
